@@ -61,6 +61,20 @@ shasum -a 256 -c SHA256SUMS
 
 GitHub Actions 每天运行一次，也可以在 Actions 页面手动触发。只有检测到新版本时才会创建 Release。
 
+## 连接不上 ChatGPT 桌面应用
+
+如果侧边栏显示：`The Chrome side panel could not connect to the ChatGPT desktop app`，通常不是下载包损坏，而是扩展没有连接到本机的 ChatGPT 桌面应用。
+
+请依次检查：
+
+1. 安装并更新 [ChatGPT 桌面应用](https://chatgpt.com/download/)。
+2. 在桌面应用中打开“设置” → “Computer Use”，选择 Chrome，并完成连接/安装流程。
+3. 确认扩展已在你实际使用的 Chrome 配置文件中启用；如果有多个 Chrome Profile，请在正确的 Profile 中安装。
+4. 完全退出并重新打开 ChatGPT 桌面应用和 Chrome。
+5. 如果桌面应用中的状态仍显示“Install”，重新执行连接流程，或删除扩展后再安装一次。
+
+这个镜像只提供 Chrome 扩展文件，不能替代 ChatGPT 桌面应用或其本机连接服务。没有桌面应用时，扩展的侧边栏连接功能无法正常工作。更多背景和排障步骤参见 [OpenAI Browser extension 文档](https://developers.openai.com/codex/chrome-extension)。
+
 ## 注意
 
 请确认你所在地区、组织和 OpenAI/Chrome Web Store 的条款允许再分发该扩展。不要将本仓库描述成官方仓库。
