@@ -21,6 +21,8 @@ hehggadaopoacecdllhhajmbjkdcmajg
 
 如果你搜索的是“ChatGPT Chrome 插件”“ChatGPT 浏览器扩展”“OpenAI ChatGPT side panel”或“无法访问 Chrome Web Store 时安装 ChatGPT 扩展”，这个仓库就是用于下载和安装该扩展的镜像。
 
+> 说明：Google Chrome 集成是 ChatGPT/Codex 桌面应用内置的浏览器功能，不是插件市场中可以单独搜索和安装的普通插件。这个仓库只提供 Chrome 扩展文件；要使用浏览器控制功能，仍需要安装 ChatGPT 桌面应用，并在“设置” → “Computer Use”中启用或管理 Google Chrome。
+
 ## 安装方式
 
 前往仓库的 [Releases](../../releases/latest) 页面，下载最新版本的 `chatgpt-extension.crx`。只有在 CRX 无法安装时，才使用 ZIP 方式。
@@ -64,6 +66,8 @@ GitHub Actions 每天运行一次，也可以在 Actions 页面手动触发。�
 ## 连接不上 ChatGPT 桌面应用
 
 如果侧边栏显示：`The Chrome side panel could not connect to the ChatGPT desktop app`，通常不是下载包损坏，而是扩展没有连接到本机的 ChatGPT 桌面应用。
+
+请注意：仅安装本仓库提供的 CRX/ZIP 不足以启用完整功能。桌面应用会提供本机连接服务（Native Messaging Host），扩展通过它与 ChatGPT/Codex 通信；这个连接服务不会从 CRX/ZIP 中自动安装。
 
 请依次检查：
 
