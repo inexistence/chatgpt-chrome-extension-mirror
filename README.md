@@ -1,6 +1,25 @@
 # ChatGPT Chrome Extension Mirror
 
-自动检查并归档 Chrome Web Store 中 ChatGPT 扩展的版本。项目是个人镜像，**不隶属于 OpenAI**。
+这是 Chrome Web Store 中 ChatGPT 官方浏览器扩展的个人镜像和版本归档，扩展 ID 为：
+
+```text
+hehggadaopoacecdllhhajmbjkdcmajg
+```
+
+项目通过 GitHub Actions 自动检查更新，并提供可下载的 CRX 和 ZIP 文件。项目本身是个人镜像，**不隶属于 OpenAI，也不是 OpenAI 的源码仓库**。
+
+## 这个扩展是做什么的？
+
+它用于在 Chrome 中使用 ChatGPT 的浏览器辅助能力，主要包括：
+
+- 从 Chrome 侧边栏打开 ChatGPT；
+- 在 `chatgpt.com` 页面提供 ChatGPT 相关的浏览器交互；
+- 让 ChatGPT 在获得相应权限后执行部分浏览器操作，例如读取或操作标签页、历史记录、书签、下载等；
+- 支持 ChatGPT/Codex 的浏览器工作流和本地辅助功能。
+
+它不是一个独立的聊天网站，也不是 ChatGPT 网页客户端的替代品；使用时通常需要登录 ChatGPT，并按 Chrome 的提示授予必要权限。
+
+如果你搜索的是“ChatGPT Chrome 插件”“ChatGPT 浏览器扩展”“OpenAI ChatGPT side panel”或“无法访问 Chrome Web Store 时安装 ChatGPT 扩展”，这个仓库就是用于下载和安装该扩展的镜像。
 
 ## 安装方式
 
