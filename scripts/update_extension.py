@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import hashlib
 import io
+import json
 import os
 import shutil
 import sys
@@ -15,6 +16,11 @@ from xml.etree import ElementTree
 
 
 EXTENSION_ID = "hehggadaopoacecdllhhajmbjkdcmajg"
+# Public key from the signed Chrome Web Store package. This lets an unpacked
+# copy retain the official extension ID, which the native host allowlist uses.
+OFFICIAL_PUBLIC_KEY = (
+    "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr5M/DZ28sAuOnk9v8C2IPTLNEZ0F0pv9qwRzMAbGbE0NB6I6T+wS6Na2n0sbQOK98iezN2FX26dsBWMELXtf4YCETdRiFSBOnNhZObZdrxeTTrhk1AhKA/Id5vgDWfSZ3Q+9BjBWHYK9yuTGo3PMK/yOW/CH6cSn07btvn7Aq+t+KrAwGOJewCN7gGojOrshJs/YwdxwxpUnb7s6QbFGkPKg9G6as4y4ipQ8fiQHRAcKm+mUK/CoCVSL+c4Yog0CSJqEEaruOeh8CgM4V0LX4kw5rs/4THAvTwtYRsW0n3faVR7uGj1eadsWuKciQHxpRMI9I4EE7yuaxavv3Agf6QIDAQAB"
+)
 PROD_VERSION = "131.0"
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
@@ -56,6 +62,13 @@ def extract_crx(data: bytes, destination: Path) -> None:
             archive.extract(member, destination)
 
 
+def add_official_key(destination: Path) -> None:
+    manifest_path = destination / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    manifest.setdefault("key", OFFICIAL_PUBLIC_KEY)
+    manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
 def main() -> int:
     version, codebase = fetch_update()
     previous = STATE.read_text().strip() if STATE.exists() else "0.0.0"
@@ -71,6 +84,7 @@ def main() -> int:
             package = response.read()
         (DIST / "chatgpt-extension.crx").write_bytes(package)
         extract_crx(package, DIST / "unpacked")
+        add_official_key(DIST / "unpacked")
         with zipfile.ZipFile(DIST / "chatgpt-extension.zip", "w", zipfile.ZIP_DEFLATED) as archive:
             for path in (DIST / "unpacked").rglob("*"):
                 if path.is_file():

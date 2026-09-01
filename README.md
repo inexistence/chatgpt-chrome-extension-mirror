@@ -37,7 +37,7 @@ hehggadaopoacecdllhhajmbjkdcmajg
 1. 下载并解压 `chatgpt-extension.zip` 到一个固定目录。
 2. 在 `chrome://extensions` 打开“开发者模式”。
 3. 点击“加载已解压的扩展程序”，选择直接包含 `manifest.json` 的目录。
-4. 注意：已解压加载通常会生成不同的扩展 ID，可能无法连接 ChatGPT 桌面应用的 Native Messaging Host。因此，侧边栏报连接错误时应改用 CRX。
+4. 本项目生成的 ZIP 会自动补入官方公钥，正常情况下应生成官方扩展 ID `hehggadaopoacecdllhhajmbjkdcmajg`。如果 Chrome 显示的是其他 ID，说明当前包没有保留官方身份，可能无法连接 ChatGPT 桌面应用的 Native Messaging Host。
 
 ### 校验下载文件（可选）
 
