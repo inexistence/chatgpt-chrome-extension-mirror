@@ -23,21 +23,21 @@ hehggadaopoacecdllhhajmbjkdcmajg
 
 ## 安装方式
 
-前往仓库的 [Releases](../../releases/latest) 页面，下载最新版本的 `chatgpt-extension.zip` 或 `chatgpt-extension.crx`。
+前往仓库的 [Releases](../../releases/latest) 页面，下载最新版本的 `chatgpt-extension.crx`。只有在 CRX 无法安装时，才使用 ZIP 方式。
 
-### 方式一：加载 ZIP（推荐）
-
-1. 下载并解压 `chatgpt-extension.zip` 到一个固定目录。不要只打开 ZIP 预览，也不要之后删除这个目录。
-2. 在 Chrome 地址栏打开 `chrome://extensions`。
-3. 打开右上角的“开发者模式”。
-4. 点击“加载已解压的扩展程序”。
-5. 选择刚才解压出的目录（该目录中应直接包含 `manifest.json`）。
-
-### 方式二：安装 CRX
+### 方式一：安装 CRX（推荐）
 
 1. 在 `chrome://extensions` 打开“开发者模式”。
 2. 将 `chatgpt-extension.crx` 拖入扩展管理页面。
-3. 如果 Chrome 拒绝安装，请改用上面的“加载已解压的扩展程序”方式；部分 Chrome 版本会限制从本地安装 CRX。
+3. 确认 Chrome 显示的扩展 ID 是 `hehggadaopoacecdllhhajmbjkdcmajg`。
+4. 如果 Chrome 拒绝安装，请先卸载同名的已解压版本，再重启 Chrome 后重试。
+
+### 方式二：加载 ZIP（备用）
+
+1. 下载并解压 `chatgpt-extension.zip` 到一个固定目录。
+2. 在 `chrome://extensions` 打开“开发者模式”。
+3. 点击“加载已解压的扩展程序”，选择直接包含 `manifest.json` 的目录。
+4. 注意：已解压加载通常会生成不同的扩展 ID，可能无法连接 ChatGPT 桌面应用的 Native Messaging Host。因此，侧边栏报连接错误时应改用 CRX。
 
 ### 校验下载文件（可选）
 
