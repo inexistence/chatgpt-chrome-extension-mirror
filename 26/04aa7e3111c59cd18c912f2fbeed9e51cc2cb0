@@ -1,0 +1,22 @@
+README.md
+  s_ff9ec872c8df44::t_27eb886d66b929 5,7-40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "2604aa7e3111c59cd18c912f2fbeed9e51cc2cb0",
+  "prompts": {},
+  "logical_commit_id": "60eefac146c896782869e32257a1ebe275ac4095",
+  "sessions": {
+    "s_ff9ec872c8df44": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a05bcd-df1e-7980-9652-51c6f4727617",
+        "model": "imo/gpt-5.6-sol"
+      },
+      "human_author": "Jianbin <inexistenceorz@gmail.com>",
+      "total_additions": 35,
+      "total_deletions": 4
+    }
+  }
+}
